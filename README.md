@@ -16,7 +16,7 @@ Many other methods for extending 2D Perlin noise to three dimensions involve arb
 
 ### Method Signature
 ```csharp
-public static float 3DNoise(float x, float y, float time, float scale, float viewport, int steps, float low, float high, float target)
+public static float Noise3D(float x, float y, float time, float scale, float viewport, int steps, float low, float high, float target)
 ```
 
 ### Parameters
