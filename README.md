@@ -9,7 +9,7 @@ This repository contains a C# implementation of a **3D Perlin Noise Generator** 
 - **Time-Based Third Dimension**: The third dimension is treated as a "time" parameter, allowing the noise to evolve smoothly without visible seams or repetition, effectively simulating a 3D noise space.
 
 ## How It Works
-The `3DNoise` method blends two 2D Perlin noise layers using a time-based variable. The evolution of the noise is driven by a sine function, and the offsets for the two noise layers are updated deterministically as the time variable progresses. This technique creates a dynamic and continuous 3D noise field without introducing noticeable artifacts.
+The `Noise3D` method blends two 2D Perlin noise layers using a time-based variable. The evolution of the noise is driven by a sine function, and the offsets for the two noise layers are updated deterministically as the time variable progresses. This technique creates a dynamic and continuous 3D noise field without introducing noticeable artifacts.
 
 ### Comparison to Other Approaches
 Many other methods for extending 2D Perlin noise to three dimensions involve arbitrary changes to the Perlin parameters, such as adjusting scale, translating coordinates, or other forms of manipulation. These approaches often lead to undesirable effects, including visible artifacts or repeated patterns. In contrast, this implementation evolves a 2D Perlin noise deterministically over time without modifying the underlying parameters or translating the noise field. This ensures that the generated noise remains consistent, high-quality, and free from typical artifacts.
@@ -40,7 +40,7 @@ This project is licensed under the MIT License, making it free for anyone to use
 
 ## Example Usage
 ```csharp
-float noiseValue = Perlin.3DNoise(x, y, time, scale, viewport, steps, low, high, target);
+float noiseValue = Perlin.Noise3D(x, y, time, scale, viewport, steps, low, high, target);
 ```
 This example shows how to generate a noise value based on `x`, `y`, and `time` coordinates. Adjust the `scale`, `steps`, `low`, `high`, and `target` parameters to fine-tune the noise output for your specific needs.
 
